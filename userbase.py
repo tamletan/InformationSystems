@@ -6,7 +6,7 @@ r_cols = ['Titanic', 'Pulp_Fiction', 'Iron_Man', 'Forrest_Gump', 'The_Mummy']
 r_rows = ['Joe', 'Ann', 'Mary', 'Steve']
 
 def init_data(file):
-    ratings_base = pd.read_csv(file, sep=':', names=r_cols, encoding='latin-1')
+    ratings_base = pd.read_csv(file, names=r_cols)
     rate_base = ratings_base.values
 
     print("----------------------------------INPUT----------------------------------")
@@ -71,7 +71,7 @@ def pred(func):
 if __name__ == "__main__":
     np.set_printoptions(precision=3, suppress=True)
 
-    rate_base = init_data('userbase.input')
+    rate_base = init_data('userbase.csv')
     u = rate_base.shape[0]
 
     sim_I = np.eye(u)
